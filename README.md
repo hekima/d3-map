@@ -1,4 +1,4 @@
-br-map
+d3-map
 ======
 
-Map of Brazil using d3.js
+Re-usable topojson maps using [d3.js](http://d3js.org/).

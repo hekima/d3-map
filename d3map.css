@@ -1,0 +1,7 @@
+.d3map .micro,
+.d3map .meso,
+.d3map .states,
+.d3map .counties {
+  stroke: white;
+  stroke-width: 1.5px;
+}

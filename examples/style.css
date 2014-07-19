@@ -1,0 +1,75 @@
+ *, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', Tahoma, sans-serif;
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: normal;
+  color: #444;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: normal;
+  color: #444;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #444;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+a, a:visited {
+  color: #225EA8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.trigger {
+  margin: 1em 2em 2em;
+  color: #0792FB;
+  cursor: pointer;
+  display: inline;
+}
+
+.trigger:hover {
+  text-decoration: underline;
+}
+
+.viz {
+  margin: 20px 0;
+}
