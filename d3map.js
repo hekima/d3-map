@@ -196,7 +196,7 @@
             mapSelection.attr('fill', function(d) {
                 if (color !== null) {
                   var name = d.properties[config.map.key];
-                  if (valueById[name] !== undefined) {
+                  if (valueById[name] != undefined) {
                     return color(valueById[name]['color']);
                   }
                 }
@@ -205,7 +205,11 @@
               .select('title')
               .text(function(d) {
                 var name = d.properties[config.map.key];
-                return name.toUpperCase() + ': ' + fmt(valueById[name]['color']);
+                var ttl = name;
+                if (valueById[name] != undefined) {
+                  ttl = ttl + ': ' + fmt(valueById[name]['color']);
+                }
+                return ttl;
               });
 
             /* -- on click -- */

@@ -20,8 +20,27 @@
 
  <div class="container">
 
-    <h1>Exemplos de uso</h1>
-    <div id="example-one" class="viz"></div>
+    <h1>Exemplos de uso do mapa</h1>
+
+    <div class="map-block">
+      <div id="example-1" class="viz"></div> 
+      <div class="code">
+      </div>
+    </div>
+
+    <div class="map-block">
+      <div id="example-2" class="viz"></div> 
+      <div class="code">
+      </div>
+    </div>
+
+    <div class="map-block">
+      <div id="example-3" class="viz"></div> 
+      <div class="code">
+      </div>
+    </div>
+
+  </div>
 
   </div>
 
@@ -47,8 +66,8 @@
           'key': 'name'
         })
         .color({
-          'key': '2010',
-          'range': colorbrewer.YlGnBu[9]
+          'key': '1920',
+          'range': colorbrewer.YlGn[9]
         })
         .width(500)
         .height(500)
@@ -57,22 +76,23 @@
 
   });
 
-  d3.tsv('data/br.json', function(error, data) {
+  d3.json('data/br-2.json', function(error, data) {
     if (error) {
       console.log(error);
     } else {
       var two = d3map.viz()
         .container('#example-2')
         .data(data)
-        .id('UF')
+        .id('id')
         .map({
           'topojson': '/resources/br-states.min.json',
           'unit': 'states',
           'key': 'name'
         })
         .color({
-          'key': 'a',
-          'range': ['#2166AC', '#40004B']
+          'key': 'value',
+          'range': ['#FEC44F', '#40004B'],
+          'interpolate': true
         })
         .width(500)
         .height(500)
@@ -81,14 +101,14 @@
 
   });
 
-  d3.tsv('data/br.json', function(error, data) {
+  d3.json('data/br.json', function(error, data) {
     if (error) {
       console.log(error);
     } else {
       var three = d3map.viz()
         .container('#example-3')
         .data(data)
-        .id('UF')
+        .id('id')
         .map({
           'topojson': '/resources/br-states.min.json',
           'unit': 'states',
@@ -98,7 +118,8 @@
           'key': function(d) {
             return d.a - d.b;
           },
-          'range': colorbrewer.Spectral[5]
+          'domain': [-50, 0, 50],
+          'range': colorbrewer.RdBu[9]
         })
         .width(500)
         .height(500)
