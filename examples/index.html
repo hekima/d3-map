@@ -33,14 +33,12 @@
 
   <script>
 
-  var exampleViz;
-
-  d3.tsv('data/populacao_nos_centros_demograficos.tsv', function(error, data) {
+   d3.tsv('data/populacao_nos_centros_demograficos.tsv', function(error, data) {
     if (error) {
       console.log(error);
     } else {
-      exampleViz = d3map.viz()
-        .container('#example-one')
+      var one = d3map.viz()
+        .container('#example-1')
         .data(data)
         .id('UF')
         .map({
@@ -51,6 +49,56 @@
         .color({
           'key': '2010',
           'range': colorbrewer.YlGnBu[9]
+        })
+        .width(500)
+        .height(500)
+        .draw();
+    }
+
+  });
+
+  d3.tsv('data/br.json', function(error, data) {
+    if (error) {
+      console.log(error);
+    } else {
+      var two = d3map.viz()
+        .container('#example-2')
+        .data(data)
+        .id('UF')
+        .map({
+          'topojson': '/resources/br-states.min.json',
+          'unit': 'states',
+          'key': 'name'
+        })
+        .color({
+          'key': 'a',
+          'range': ['#2166AC', '#40004B']
+        })
+        .width(500)
+        .height(500)
+        .draw();
+    }
+
+  });
+
+  d3.tsv('data/br.json', function(error, data) {
+    if (error) {
+      console.log(error);
+    } else {
+      var three = d3map.viz()
+        .container('#example-3')
+        .data(data)
+        .id('UF')
+        .map({
+          'topojson': '/resources/br-states.min.json',
+          'unit': 'states',
+          'key': 'name'
+        })
+        .color({
+          'key': function(d) {
+            return d.a - d.b;
+          },
+          'range': colorbrewer.Spectral[5]
         })
         .width(500)
         .height(500)
