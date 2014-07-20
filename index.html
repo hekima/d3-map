@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>| Mapa do Brasil |</title>
+
+  <!-- Map default style style -->
+  <link href="d3map.css" rel="stylesheet" type="text/css">
+
+  <!-- Examples style -->
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Font -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/lib/highlight/styles/github.css">
+  <script src="/lib/highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+
+ <div class="container">
+
+    <h1>Exemplos de uso do mapa</h1>
+
+    <div class="map-block">
+      <div id="example-1" class="viz"></div> 
+      <div class="code">
+      </div>
+    </div>
+
+    <div class="map-block">
+      <div id="example-2" class="viz"></div> 
+      <div class="code">
+      </div>
+    </div>
+
+    <div class="map-block">
+      <div id="example-3" class="viz"></div> 
+      <div class="code">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/lib/d3/d3.min.js"></script>
+  <script src="/lib/topojson/topojson.js"></script>
+  <script src="/lib/colorbrewer/colorbrewer.js"></script>
+  <script src="/d3map.min.js"></script>
+
+  <script>
+
+  d3.tsv('data/populacao_nos_centros_demograficos.tsv', function(error, data) {
+    if (error) {
+      console.log(error);
+    } else {
+      var one = d3map.viz()
+        .container('#example-1')
+        .data(data)
+        .id('UF')
+        .map({
+          'topojson': '/resources/br-states.min.json',
+          'unit': 'states',
+          'key': 'name'
+        })
+        .color({
+          'key': '2010',
+          'range': colorbrewer.YlGnBu[9]
+        })
+        .width(500)
+        .height(500)
+        .draw();
+    }
+
+  });
+
+  d3.tsv('data/br.json', function(error, data) {
+    if (error) {
+      console.log(error);
+    } else {
+      var two = d3map.viz()
+        .container('#example-2')
+        .data(data)
+        .id('UF')
+        .map({
+          'topojson': '/resources/br-states.min.json',
+          'unit': 'states',
+          'key': 'name'
+        })
+        .color({
+          'key': 'a',
+          'range': ['#2166AC', '#40004B']
+        })
+        .width(500)
+        .height(500)
+        .draw();
+    }
+
+  });
+
+  d3.tsv('data/br.json', function(error, data) {
+    if (error) {
+      console.log(error);
+    } else {
+      var three = d3map.viz()
+        .container('#example-3')
+        .data(data)
+        .id('UF')
+        .map({
+          'topojson': '/resources/br-states.min.json',
+          'unit': 'states',
+          'key': 'name'
+        })
+        .color({
+          'key': function(d) {
+            return d.a - d.b;
+          },
+          'range': colorbrewer.Spectral[5]
+        })
+        .width(500)
+        .height(500)
+        .draw();
+    }
+
+  });
+
+  </script>
+
+</body>
+
+</html>
