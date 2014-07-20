@@ -14,8 +14,8 @@
   <!-- Google Font -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="/lib/highlight/styles/github.css">
-  <script src="/lib/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" href="lib/highlight/styles/github.css">
+  <script src="lib/highlight/highlight.pack.js"></script>
   <script>
   hljs.initHighlightingOnLoad();
   </script>
@@ -42,7 +42,7 @@ d3.tsv('data/pop.tsv', function(error, data) {
       .data(data)
       .id('UF')
       .map({
-        'topojson': '/resources/br-states.min.json',
+        'topojson': 'resources/br-states.min.json',
         'unit': 'states',
         'key': 'name'
       })
@@ -74,7 +74,7 @@ d3.json('data/br-2.json', function(error, data) {
       .data(data)
       .id('id')
       .map({
-        'topojson': '/resources/br-states.min.json',
+        'topojson': 'resources/br-states.min.json',
         'unit': 'states',
         'key': 'name'
       })
@@ -110,7 +110,7 @@ d3.json('data/br.json', function(error, data) {
       .data(data)
       .id('id')
       .map({
-        'topojson': '/resources/br-states.min.json',
+        'topojson': 'resources/br-states.min.json',
         'unit': 'states',
         'key': 'name'
       })
@@ -133,10 +133,10 @@ d3.json('data/br.json', function(error, data) {
 
   </div>
 
-  <script src="/lib/d3/d3.min.js"></script>
-  <script src="/lib/topojson/topojson.js"></script>
-  <script src="/lib/colorbrewer/colorbrewer.js"></script>
-  <script src="/d3map.min.js"></script>
+  <script src="lib/d3/d3.min.js"></script>
+  <script src="lib/topojson/topojson.js"></script>
+  <script src="lib/colorbrewer/colorbrewer.js"></script>
+  <script src="d3map.min.js"></script>
 
   <script>
   d3.tsv('data/pop.tsv', function(error, data) {
@@ -148,7 +148,7 @@ d3.json('data/br.json', function(error, data) {
         .data(data)
         .id('UF')
         .map({
-          'topojson': '/resources/br-states.min.json',
+          'topojson': 'resources/br-states.min.json',
           'unit': 'states',
           'key': 'name'
         })
@@ -171,7 +171,7 @@ d3.json('data/br.json', function(error, data) {
         .data(data)
         .id('id')
         .map({
-          'topojson': '/resources/br-states.min.json',
+          'topojson': 'resources/br-states.min.json',
           'unit': 'states',
           'key': 'name'
         })
@@ -198,7 +198,7 @@ d3.json('data/br.json', function(error, data) {
         .data(data)
         .id('id')
         .map({
-          'topojson': '/resources/br-states.min.json',
+          'topojson': 'resources/br-states.min.json',
           'unit': 'states',
           'key': 'name'
         })
