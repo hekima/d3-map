@@ -8,15 +8,15 @@ Usage:
 
 Include <code>d3map.min.js</code>, <code>d3.js</code> and <code>topojson.js</code> to your HTML, as follows:
 
-<code>
+```
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <script src="d3map.min.js"></script>
-</code>
+```
 
 Maps may be created using the following commands:
 
-<code>
+```
   d3.json('data/br-2.json', function(error, data) {
     if (error) {
       console.log(error);
@@ -43,6 +43,6 @@ Maps may be created using the following commands:
         .draw();
     }
   });
-</code>
+```
 
 Examples on [zahpee.github.io/d3-map](zahpee.github.io/d3-map).
