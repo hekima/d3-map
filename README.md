@@ -45,4 +45,4 @@ Maps may be created using the following commands:
   });
 ```
 
-Examples on [zahpee.github.io/d3-map](zahpee.github.io/d3-map).
+Examples on [zahpee.github.io/d3-map](http://zahpee.github.io/d3-map).
